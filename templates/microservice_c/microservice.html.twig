@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MicroserviceC{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <h1>Microservice C</h1>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Refer</th>
+                <th scope="col">Question</th>
+                <th scope="col">Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if analytics is not empty %}
+                {% for analytic in analytics %}
+                    <tr>
+                        <th >{{ analytic.refer }}</th>
+                        <th > {% if analytic.question  == false %}
+                                No
+                            {% else %}
+                                Yes
+                            {% endif %}
+                        </th>
+                        <td>{{ analytic.rating }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

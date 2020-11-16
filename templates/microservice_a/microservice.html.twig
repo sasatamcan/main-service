@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MicroserviceA{% endblock %}
+
+{% block body %}
+
+    <div class="example-wrapper">
+        <h1>Microservice A</h1>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nickname</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if information is not empty %}
+                {% for info in information %}
+                    <tr>
+                        <th >{{ info.name }}</th>
+                        <th > {% if info.gender  == false %}
+                                Female
+                            {% else %}
+                                Male
+                            {% endif %}
+                        </th>
+                        <td>{{ info.age }}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

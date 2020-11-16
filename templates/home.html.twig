@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Main Service{% endblock %}
+
+{% block body %}
+
+<h1>
+    Main Service
+</h1>
+    <a href="{{ path('microservice_a') }}" class="form_btn mT-10">
+        <div class="title">Microservice A</div>
+    </a>
+    <a href="{{ path('microservice_b') }}" class="form_btn mT-10">
+        <div class="title">Microservice B</div>
+    </a>
+    <a href="{{ path('microservice_c') }}" class="form_btn mT-10">
+        <div class="title">Microservice C</div>
+    </a>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MicroserviceB{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Microservice B</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Code</th>
+            <th scope="col">Notifications</th>
+            <th scope="col">Payments</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if settings is not empty %}
+            {% for setting in settings %}
+        <tr>
+            <th >{{ setting.email }}</th>
+            <td>{{ setting.code }}</td>
+            <th > {% if setting.notification == false %}
+                    No
+                {% else %}
+                    Yes
+                {% endif %}
+            </th>
+            <th > {% for payment in setting.payments %}
+                    {{ payment }}
+                {% endfor %}
+            </th>
+        </tr>
+            {% endfor %}
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
